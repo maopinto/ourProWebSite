@@ -14,6 +14,10 @@
   --line: #dedfd7;
   --dark: #252b25;
 }
+[hidden] {
+  display: none !important;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -2460,6 +2464,13 @@ a {
 @media (max-width: 380px) {
   .header-inner {
     gap: 8px;
+  }
+  .header-inner .brand {
+    font-size: 23px;
+    gap: 3px;
+  }
+  .header-inner .brand-symbol {
+    width: 26px;
   }
   .header-actions {
     gap: 4px;

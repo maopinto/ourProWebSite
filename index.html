@@ -1,18 +1,480 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f6f7f3" />
-    <meta
-      name="description"
-      content="Meet TERRA. An AI-assisted 3D world builder that helps turn your ideas into landscapes. Imagine a world. Make it yours."
-    />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f6f7f3">
+    <meta name="description" content="Meet TERRA. An AI-assisted 3D world builder that helps turn your ideas into landscapes. Imagine a world. Make it yours.">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./js/terrain.js" defer=""></script>
+    <script src="./js/dialogs.js" defer=""></script>
+    <script src="./js/main.js" defer=""></script>
     <title>TERRA — A world of your own.</title>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- Page content: edit headings, text, links, and sections here. -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner page-width">
+        <a class="brand" href="#" aria-label="TERRA home">
+          <span class="brand-symbol">
+            <svg class="" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m2 20 8-16 5 9 3-5 5 12H2Z"></path>
+              <path d="m7 10 3 3 3-3"></path>
+            </svg>
+          </span>
+          <span>TERRA<span class="brand-period">.</span></span>
+        </a>
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a class="nav-active" href="#product">Product</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#our-vision">Our vision <span class="tiny-dot"></span></a>
+        </nav>
+        <div class="header-actions">
+          <button class="login-button" data-open-account="">
+            Log in
+            <svg class="" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 18 18 6M6 6h12v12"></path>
+            </svg>
+          </button>
+          <button class="button button-dark button-small" data-open-download="">
+            Get TERRA
+            <svg class="" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3v12m-5-5 5 5 5-5M5 15v5h14v-5"></path>
+            </svg>
+          </button>
+          <button class="mobile-menu-button icon-button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation">
+            <svg class="" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <nav id="mobile-navigation" class="mobile-navigation" aria-label="Mobile navigation" hidden="">
+        <a href="#product">
+          Product
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"></path></svg>
+        </a>
+        <a href="#how-it-works">
+          How it works
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"></path></svg>
+        </a>
+        <a href="#our-vision">
+          Our vision
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"></path></svg>
+        </a>
+        <button type="button" data-open-account="">
+          Log in
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"></path></svg>
+        </button>
+      </nav>
+    </header>
+    <main id="main">
+      <section id="product" class="hero page-width" aria-labelledby="hero-heading">
+        <div class="hero-copy">
+          <div class="hero-heading" data-reveal="up">
+            <div class="eyebrow"><span class="status-dot"></span> YOUR IMAGINATION. A NEW DIMENSION.</div>
+            <h1 id="hero-heading">A world of<br><em>your own.</em><span class="headline-star" aria-hidden="true">✳</span></h1>
+          </div>
+          <div class="hero-intro" data-reveal="up" data-reveal-delay="1">
+            <p>
+              From a spark of an idea to an entire landscape.
+              <br class="desktop-break">
+              Create, shape, and explore 3D worlds with AI.
+              <br class="desktop-break">
+              A little less complexity. A lot more possibility.
+            </p>
+            <div class="hero-actions">
+              <button class="button button-dark" data-open-download="">
+                Start creating
+                <svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 12h15m-6-6 6 6-6 6"></path>
+                </svg>
+              </button>
+              <a class="text-link" href="#how-it-works">
+                See how it works
+                <svg class="" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m9 5 11 7-11 7V5Z"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="platform-note">
+              <span class="platform-icons">
+                <svg class="" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m3 5 8-1v7H3V5Zm10-1 8-1v8h-8V4ZM3 13h8v7l-8-1v-6Zm10 0h8v8l-8-1v-7Z" fill="currentColor" stroke="none"></path>
+                </svg>
+                <svg class="" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M16.3 3c-.3 1.5-1.4 2.7-3 2.8-.2-1.4 1.1-2.8 3-2.8ZM18.1 13c0-2 1.5-3 1.7-3.2-1-1.6-2.7-1.8-3.4-1.8-1.4-.1-2.7.8-3.4.8-.7 0-1.9-.8-3-.8C7.6 8 5 10 5 13.6c0 2.1.8 4.3 1.9 5.9.9 1.2 1.6 2.2 2.8 2.1 1.2 0 1.6-.7 3.1-.7s1.8.7 3.1.7c1.3 0 2.1-1.1 2.8-2.1.8-1.2 1.2-2.3 1.3-2.7-.1 0-1.9-.8-1.9-3.8Z" fill="currentColor" stroke="none"></path>
+                </svg>
+                <svg class="" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 10V6a3 3 0 0 1 6 0v4l3 6-1 4H7l-1-4 3-6Z"></path>
+                  <path d="m10 10 2 2 2-2M7 19l-3 2h6m7-2 3 2h-6"></path>
+                  <path d="M10 7h.01M14 7h.01" stroke-width="3"></path>
+                </svg>
+              </span>
+              <span>Your next creative space. Coming to desktop.</span>
+            </div>
+          </div>
+        </div>
+        <div class="editor-frame" data-reveal="up">
+          <div class="editor-topbar">
+            <div class="editor-file">
+              <span class="editor-mini-logo">
+                <svg class="" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m2 20 8-16 5 9 3-5 5 12H2Z"></path>
+                  <path d="m7 10 3 3 3-3"></path>
+                </svg>
+              </span>
+              <span>My first world<span class="file-extension">.terra</span></span>
+              <span class="file-divider"></span>
+              <span class="preview-label"><span></span> Preview only</span>
+            </div>
+            <span class="editor-app-name">TERRA STUDIO</span>
+            <button class="editor-icon-button" aria-label="Expand preview" title="Expand preview">
+              <svg class="" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="editor-body">
+            <aside class="editor-sidebar" aria-label="Landscape presets">
+              <div class="sidebar-heading">
+                YOUR WORLD
+                <svg class="" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m12 3 10 5-10 5L2 8l10-5Zm-10 9 10 5 10-5M2 16l10 5 10-5"></path>
+                </svg>
+              </div>
+              <div class="scene-item">
+                <svg class="" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m2 20 8-16 5 9 3-5 5 12H2Z"></path>
+                  <path d="m7 10 3 3 3-3"></path>
+                </svg>
+                <span>Landscape</span>
+                <span class="scene-dot"></span>
+              </div>
+              <div class="scene-item scene-muted">
+                <svg class="" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"></path>
+                </svg>
+                <span>Natural light</span>
+              </div>
+              <div class="scene-item scene-muted">
+                <svg class="" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 7h4l2-3h6l2 3h4v13H3V7Z"></path>
+                  <circle cx="12" cy="13" r="4"></circle>
+                </svg>
+                <span>Perspective camera</span>
+              </div>
+              <div class="sidebar-divider"></div>
+              <div class="sidebar-heading">SAMPLE SCENES</div>
+              <div class="landscape-presets">
+                <button class="landscape-preset is-active" data-landscape="alpine" aria-pressed="true">
+                  <span class="preset-thumb preset-alpine" aria-hidden="true">
+                    <svg viewBox="0 0 80 46"><path d="M0 46 14 22 23 30 40 5 53 26 63 19 80 46Z"></path><path d="m15 46 25-27 8 18 15-8 17 17"></path></svg>
+                  </span>
+                  <span>Alpine valley</span>
+                  <svg class="" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m5 12 4 4L19 6"></path>
+                  </svg>
+                </button>
+                <button class="landscape-preset" data-landscape="desert" aria-pressed="false">
+                  <span class="preset-thumb preset-desert" aria-hidden="true">
+                    <svg viewBox="0 0 80 46"><path d="M0 38Q22 5 42 30Q62 2 80 31V46H0Z"></path><path d="M0 43Q28 15 55 39T80 38"></path></svg>
+                  </span>
+                  <span>Desert dunes</span>
+                </button>
+                <button class="landscape-preset" data-landscape="island" aria-pressed="false">
+                  <span class="preset-thumb preset-island" aria-hidden="true">
+                    <svg viewBox="0 0 80 46"><path d="M0 46 20 38 34 15 45 23 54 8 66 37 80 46Z"></path><path d="m15 46 25-27 8 18 15-8 17 17"></path></svg>
+                  </span>
+                  <span>Wild island</span>
+                </button>
+              </div>
+              <div class="sidebar-bottom">
+                <span class="sidebar-bottom-icon">
+                  <svg class="" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"></path>
+                    <path d="m20 2 .5 1.5L22 4l-1.5.5L20 6l-.5-1.5L18 4l1.5-.5L20 2Z"></path>
+                  </svg>
+                </span>
+                <span>A blank canvas.<br><strong>Infinite possibilities.</strong></span>
+              </div>
+            </aside>
+            <div class="editor-viewport">
+              <div class="terrain-stage">
+                <canvas tabindex="0" role="img" aria-label="Alpine mountain terrain preview. Drag to rotate, or use the arrow keys. Press Home to reset the view." style="display:block;width:100%;height:100%;cursor:grab;touch-action:pan-y"></canvas>
+              </div>
+              <div class="viewport-topline">
+                <span><span class="live-dot"></span>PERSPECTIVE</span>
+                <span class="viewport-shading">SHADED<span class="viewport-short-divider"></span>3D</span>
+              </div>
+              <div class="viewport-tools">
+                <button class="viewport-tool is-active" aria-label="Shaded view" aria-pressed="true" title="Shaded view">
+                  <svg class="" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m12 2 9 5v10l-9 5-9-5V7l9-5Zm0 10 9-5M12 12 3 7m9 5v10M7.5 4.5l9 5"></path>
+                  </svg>
+                </button>
+                <button class="viewport-tool" aria-label="Wireframe view" aria-pressed="false" title="Wireframe view">
+                  <svg class="" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="landscape-coordinate"><span>01 / ALPINE VALLEY</span><span>BUILT FROM A LITTLE IMAGINATION</span></div>
+              <div class="axis-gizmo" aria-hidden="true"><span class="axis-y">Y</span><span class="axis-z">Z</span><span class="axis-x">X</span><i></i><i></i><i></i></div>
+              <div class="prompt-composer">
+                <div class="prompt-composer-heading">
+                  <label for="world-prompt">
+                    <svg class="" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"></path>
+                      <path d="m20 2 .5 1.5L22 4l-1.5.5L20 6l-.5-1.5L18 4l1.5-.5L20 2Z"></path>
+                    </svg>
+                    Imagine the possibilities
+                  </label>
+                  <div class="prompt-rotation-controls">
+                    <span class="prompt-counter" aria-hidden="true">01 / 03</span>
+                    <button type="button" class="prompt-rotation-toggle" aria-label="Pause example rotation"><span class="pause-symbol" aria-hidden="true">Ⅱ</span><span>Pause</span></button>
+                  </div>
+                </div>
+                <div class="prompt-example-row">
+                  <textarea class="rotating-prompt" id="world-prompt" aria-label="Example prompt" aria-describedby="prompt-install-note" readonly="" rows="2">Create an alpine valley with dramatic peaks and winding ridgelines.</textarea>
+                  <button class="button button-dark prompt-install-button" type="button" data-open-download="">
+                    <span>Get the app</span>
+                    <svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M12 3v12m-5-5 5 5 5-5M5 15v5h14v-5"></path>
+                    </svg>
+                  </button>
+                </div>
+                <div class="prompt-suggestions" role="group" aria-label="Choose an example prompt">
+                  <button type="button" class="prompt-suggestion is-selected" aria-pressed="true" data-prompt="alpine">
+                    <svg class="" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"></path>
+                      <path d="m20 2 .5 1.5L22 4l-1.5.5L20 6l-.5-1.5L18 4l1.5-.5L20 2Z"></path>
+                    </svg>
+                    Alpine valley
+                  </button>
+                  <button type="button" class="prompt-suggestion" aria-pressed="false" data-prompt="desert">
+                    <svg class="" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"></path>
+                      <path d="m20 2 .5 1.5L22 4l-1.5.5L20 6l-.5-1.5L18 4l1.5-.5L20 2Z"></path>
+                    </svg>
+                    Desert dunes
+                  </button>
+                  <button type="button" class="prompt-suggestion" aria-pressed="false" data-prompt="island">
+                    <svg class="" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"></path>
+                      <path d="m20 2 .5 1.5L22 4l-1.5.5L20 6l-.5-1.5L18 4l1.5-.5L20 2Z"></path>
+                    </svg>
+                    Wild island
+                  </button>
+                </div>
+                <p id="prompt-install-note">Examples only. Install TERRA to send prompts and create worlds.</p>
+              </div>
+            </div>
+          </div>
+          <div class="editor-statusbar">
+            <span class="editor-status" role="status"><span class="ready-dot"></span>Sample scene · Drag to look around</span>
+            <span class="preview-disclaimer">Creation is available in the desktop app only</span>
+            <span class="statusbar-version">
+              A LITTLE PREVIEW OF WHAT’S NEXT
+              <svg class="" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"></path>
+                <path d="m20 2 .5 1.5L22 4l-1.5.5L20 6l-.5-1.5L18 4l1.5-.5L20 2Z"></path>
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div class="under-preview" data-reveal="up">
+          <span><span class="small-sparkle">✳</span> A new starting point for world builders.</span>
+          <span>Big landscapes. Small learning curve.</span>
+        </div>
+      </section>
+      <section class="features-section page-width" id="how-it-works" aria-labelledby="features-heading">
+        <div class="section-top">
+          <div data-reveal="up"><div class="eyebrow muted-eyebrow">MADE FOR THE WAY YOU THINK</div><h2 id="features-heading">Less in your way.<br><span>More in your world.</span></h2></div>
+          <p data-reveal="up" data-reveal-delay="1">You bring the idea. TERRA brings the tools.<br>A simpler path from “what if” to “look at this.”</p>
+        </div>
+        <div class="features-grid">
+          <article class="feature" data-reveal="up" data-reveal-delay="0">
+            <div class="feature-top">
+              <span class="feature-icon">
+                <svg class="" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"></path>
+                  <path d="m20 2 .5 1.5L22 4l-1.5.5L20 6l-.5-1.5L18 4l1.5-.5L20 2Z"></path>
+                </svg>
+              </span>
+              <span class="feature-number">/ 01</span>
+            </div>
+            <h3>Start with a sentence.</h3>
+            <p>A mountain range. A quiet island. Somewhere that doesn’t exist yet. Just describe what you have in mind.</p>
+          </article>
+          <article class="feature" data-reveal="up" data-reveal-delay="1">
+            <div class="feature-top">
+              <span class="feature-icon">
+                <svg class="" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 7h7m4 0h5M4 17h3m4 0h9"></path>
+                  <circle cx="13" cy="7" r="2"></circle>
+                  <circle cx="9" cy="17" r="2"></circle>
+                </svg>
+              </span>
+              <span class="feature-number">/ 02</span>
+            </div>
+            <h3>Make it feel like you.</h3>
+            <p>Shape the terrain, find the right light, and explore the details. Your creative direction stays at the center.</p>
+          </article>
+          <article class="feature" data-reveal="up" data-reveal-delay="2">
+            <div class="feature-top">
+              <span class="feature-icon">
+                <svg class="" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m12 2 9 5v10l-9 5-9-5V7l9-5Zm0 10 9-5M12 12 3 7m9 5v10M7.5 4.5l9 5"></path>
+                </svg>
+              </span>
+              <span class="feature-number">/ 03</span>
+            </div>
+            <h3>Think beyond the canvas.</h3>
+            <p>Build a world for your next game, a story you want to tell, or simply the joy of making something new.</p>
+          </article>
+        </div>
+      </section>
+      <section class="vision-section page-width" id="our-vision" aria-labelledby="vision-heading">
+        <div class="vision-art" aria-hidden="true" data-reveal="left">
+          <div class="contour contour-1"></div>
+          <div class="contour contour-2"></div>
+          <div class="contour contour-3"></div>
+          <div class="contour contour-4"></div>
+          <div class="contour contour-5"></div>
+          <div class="contour contour-6"></div>
+          <span class="vision-cross cross-one">+</span>
+          <span class="vision-cross cross-two">+</span>
+          <span class="vision-art-label">ROOM FOR THE UNIMAGINED.</span>
+        </div>
+        <div class="vision-copy" data-reveal="right" data-reveal-delay="1">
+          <div class="eyebrow muted-eyebrow">A SMALL TEAM. A BIG IDEA.</div>
+          <h2 id="vision-heading">World building should<br>be for <em>everyone.</em></h2>
+          <p>We’re a group of friends building the creative tool we wish we had. A place where AI makes the first step easier, and your imagination takes it from there.</p>
+          <p>We’re just getting started. There’s a whole world ahead.</p>
+          <button class="text-link" data-open-download="">
+            Be part of what comes next
+            <svg class="" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 18 18 6M6 6h12v12"></path>
+            </svg>
+          </button>
+        </div>
+      </section>
+      <section class="cta-section page-width" aria-labelledby="cta-heading" data-reveal="up">
+        <div><div class="eyebrow muted-eyebrow">YOUR NEXT CHAPTER STARTS HERE</div><h2 id="cta-heading">What will <em>you</em> create?</h2></div>
+        <button class="button button-dark" data-open-download="">
+          Get TERRA
+          <svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3v12m-5-5 5 5 5-5M5 15v5h14v-5"></path>
+          </svg>
+        </button>
+      </section>
+    </main>
+    <footer class="site-footer page-width">
+      <div class="footer-brand-row">
+        <a class="brand" href="#" aria-label="TERRA home">
+          <span class="brand-symbol">
+            <svg class="" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m2 20 8-16 5 9 3-5 5 12H2Z"></path>
+              <path d="m7 10 3 3 3-3"></path>
+            </svg>
+          </span>
+          <span>TERRA<span class="brand-period">.</span></span>
+        </a>
+        <span>A little imagination goes a long way.</span>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-current-year="">2026</span> TERRA. A world in the making.</span>
+        <nav aria-label="Footer navigation">
+          <a href="#product">Product</a>
+          <a href="#our-vision">Our story</a>
+          <button data-open-account="">
+            Account
+            <svg class="" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 18 18 6M6 6h12v12"></path>
+            </svg>
+          </button>
+        </nav>
+        <span class="footer-made"><span class="status-dot"></span>Made for the curious.</span>
+      </div>
+    </footer>
+    <dialog id="account-dialog" class="modal account-modal" aria-labelledby="account-title" aria-describedby="account-description">
+      <button class="modal-close" type="button" data-close-dialog="" aria-label="Close account dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path>
+        </svg>
+      </button>
+      <p class="modal-eyebrow">YOUR NEXT WORLD STARTS HERE</p>
+      <h2 class="modal-title" id="account-title">Welcome back.</h2>
+      <p class="modal-description" id="account-description">A space for your worlds, experiments, and everything in between.</p>
+      <div class="auth-tabs" role="group" aria-label="Choose account action">
+        <button type="button" class="is-active" aria-pressed="true" data-account-mode="signin">Sign in</button>
+        <button type="button" aria-pressed="false" data-account-mode="signup">Create account</button>
+      </div>
+      <p class="form-notice">Account access is coming soon. This form is a preview.</p>
+      <form class="auth-form" method="dialog">
+        <label class="field-label" for="account-name" data-account-name-field="" hidden="">
+          Your name
+          <input class="form-input" id="account-name" name="name" type="text" placeholder="Alex Morgan" autocomplete="name" required="" disabled="">
+        </label>
+        <label class="field-label" for="account-email">
+          Email address
+          <input class="form-input" id="account-email" name="email" type="email" placeholder="you@example.com" autocomplete="username" required="">
+        </label>
+        <label class="field-label" for="account-password">Password</label>
+        <div class="password-field">
+          <input class="form-input" id="account-password" name="password" type="password" placeholder="At least 8 characters" autocomplete="current-password" minlength="8" required="">
+          <button class="password-toggle" type="button" aria-label="Show password" aria-pressed="false">Show</button>
+        </div>
+        <button class="auth-forgot" type="button">Forgot password?</button>
+        <button class="button button-primary" type="submit">
+          <span data-account-submit-label="">Sign in</span>
+          <span aria-hidden="true">↗</span>
+        </button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+      <p class="auth-footer">Built for the worlds only you can imagine.</p>
+    </dialog>
+    <dialog id="download-dialog" class="modal download-modal" aria-labelledby="download-title" aria-describedby="download-description">
+      <button class="modal-close" type="button" data-close-dialog="" aria-label="Close download dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path>
+        </svg>
+      </button>
+      <p class="modal-eyebrow">TERRA FOR DESKTOP</p>
+      <h2 class="modal-title" id="download-title">Your next world awaits.</h2>
+      <p class="modal-description" id="download-description">Install TERRA to send prompts and create your own worlds. This website is a preview; the first desktop release is coming soon.</p>
+      <div class="platform-options" role="group" aria-label="Choose your operating system">
+        <button type="button" class="platform-option is-selected" aria-pressed="true" data-platform="Windows">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M3 4.5 10.5 3.5v7.75H3V4.5Zm9-1.2 9-1.2v9.15h-9V3.3ZM3 12.75h7.5v7.75L3 19.5v-6.75Zm9 0h9v9.15l-9-1.2v-7.95Z"></path>
+          </svg>
+          <span class="platform-name">Windows</span>
+          <span class="platform-detail">Planned</span>
+        </button>
+        <button type="button" class="platform-option" aria-pressed="false" data-platform="macOS">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="3" y="3.5" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.6"></rect>
+            <path d="M9 21h6m-3-4.5V21M3 13h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+          </svg>
+          <span class="platform-name">macOS</span>
+          <span class="platform-detail">Planned</span>
+        </button>
+        <button type="button" class="platform-option" aria-pressed="false" data-platform="Linux">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="16" rx="2.5" stroke="currentColor" stroke-width="1.6"></rect>
+            <path d="m7 9 3 3-3 3m6 0h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <span class="platform-name">Linux</span>
+          <span class="platform-detail">Planned</span>
+        </button>
+      </div>
+      <p class="form-notice" data-download-notice="" aria-live="polite">TERRA is in development. An installer for Windows is not available yet. Check back here for release news.</p>
+      <button class="button button-primary" type="button" disabled="">Coming soon</button>
+      <button class="auth-footer modal-back" type="button" data-close-dialog="">Back to exploring <span aria-hidden="true">↗</span></button>
+    </dialog>
   </body>
 </html>
